@@ -35,7 +35,7 @@ class NotesManager:
             if note.id == id:
                 return note
         return None
-    # Функция для чтения заметки по id
+    
     def read_note_by_id(self, id):
         note = self.get_note_by_id(id)
         if note is not None:            
