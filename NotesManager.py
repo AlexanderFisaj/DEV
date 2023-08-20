@@ -35,7 +35,15 @@ class NotesManager:
             if note.id == id:
                 return note
         return None
-
+    # Функция для чтения заметки по id
+    def read_note_by_id(self, id):
+        note = self.get_note_by_id(id)
+        if note is not None:            
+            print(f"Title: {note.title}")
+            print(f"Text: {note.body}")
+            return print("End Note.")
+        print(f"Note with id {id} not faund.")
+    
     def update_note_by_id(self, id, title=None, body=None):
         note = self.get_note_by_id(id)
         if note is not None:

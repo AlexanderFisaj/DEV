@@ -3,7 +3,7 @@ import Note
 import NotesManager
 
 parser = argparse.ArgumentParser(description='Notes application')
-parser.add_argument('command', choices=['list', 'create', 'update', 'delete'], help='Command to execute')
+parser.add_argument('command', choices=['list', 'create', 'update', 'delete', 'read'], help='Command to execute')
 parser.add_argument('--id', type=int, help='Note ID')
 parser.add_argument('--title', help='Note title')
 parser.add_argument('--body', help='Note body')
@@ -25,5 +25,8 @@ elif args.command == 'update':
 elif args.command == 'delete':
     notes_manager.delete_note_by_id(args.id)
     print(f'Note with ID {args.id} deleted')
+elif args.command == 'read':
+    notes_manager.read_note_by_id(args.id)
+    print(f'Note read with ID {args.id}')
 
 notes_manager.save_notes()
